@@ -1,0 +1,898 @@
+/* @font-face{
+    font-family: monte;
+    src: url(../fonts/Montserrat-Thin.ttf);
+    font-weight: 100;
+    font-display: swap;
+} */
+@font-face {
+    font-family: monte;
+    src: url(../fonts/Montserrat-Regular.ttf);
+    font-weight: 400;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: monte;
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-weight: 700;
+    font-display: swap;
+
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+label {
+    display: inline-block;
+}
+
+:disabled {
+    cursor: not-allowed;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+}
+
+iframe {
+    border: none;
+}
+
+html {
+    font-size: 15px;
+    --ff: monte;
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font: 16px/1.3 var(--ff);
+}
+
+.container-1 {
+    max-width: 1920px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.container-2 {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -1rem;
+}
+
+[class^="col-"] {
+    flex: 1 0 auto;
+    padding: 0 1rem;
+}
+
+.col-1 {
+    flex-basis: 8.33%;
+    max-width: 8.33%;
+}
+
+.col-2 {
+    flex-basis: 16.66%;
+    max-width: 16.66%;
+}
+
+.col-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.col-4 {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+}
+
+.col-5 {
+    flex-basis: 41.66%;
+    max-width: 41.66%;
+}
+
+.col-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.col-7 {
+    flex-basis: 58.33%;
+    max-width: 58.33%;
+}
+
+.col-8 {
+    flex-basis: 66.66%;
+    max-width: 66.66%;
+}
+
+.col-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+}
+
+.col-10 {
+    flex-basis: 83.33%;
+    max-width: 83.33%;
+}
+
+.col-11 {
+    flex-basis: 91.66%;
+    max-width: 91.66%;
+}
+
+.col-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-sp-bet {
+    justify-content: space-between;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.img-resp {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.h4 {
+    font-size: 16px;
+}
+
+/* layout */
+.topbar {
+    background: #fff;
+    color: black;
+    padding: 25px 0 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.topbar .row {
+    margin: 0;
+}
+
+.banner .row {
+    margin: 0;
+}
+
+
+.logo {
+    padding-left: 10px;
+}
+
+.logo p {
+    font-size: 28.3px;
+    font-weight: bold;
+}
+
+.logo small {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-mob {
+    float: right;
+    margin-right: 20px;
+    display: none;
+    border: 2px solid #000;
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    background: none;
+    transition: 3s;
+}
+
+.btn-mob span {
+    display: block;
+    height: 2px;
+    background: #000;
+    margin: 7px 10px;
+    transition: .3s;
+}
+
+.btn-mob.active span {
+    transform-origin: right center;
+}
+
+.btn-mob.active span:nth-child(1) {
+    transform: rotate(-15deg);
+}
+
+.btn-mob.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-mob.active span:nth-child(3) {
+    transform: rotate(15deg);
+}
+
+
+.menu li {
+    margin: 0 7px;
+}
+
+.menu li:hover {
+    border-bottom: 2px solid #000;
+}
+
+.menu li a {
+    padding: 10px 1rem;
+    display: block;
+    color: inherit;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.icon span {
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.banner {
+    background: url(img/bg-1.webp) no-repeat center top/cover;
+    padding: 150px 0 160px;
+    /* background-size: 100%; */
+}
+
+.banner h1 {
+    font-size: 80px;
+    line-height: 70px;
+}
+
+#know_more {
+    display: none;
+    padding-top: 20px;
+}
+
+.banner small {
+    display: block;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 700;
+    padding: 30px 0 24px;
+}
+
+.banner li {
+    margin: 0 10px;
+    padding-bottom: 30px;
+}
+
+.banner li a {
+    display: block;
+    border: 1px solid #000;
+    line-height: 35px;
+    padding: 0 10px;
+    border-radius: 50%;
+    color: #000;
+    transition: .3s all;
+}
+
+.banner li a:hover {
+    color: #fff;
+    background: #000;
+}
+
+.banner p {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.btn {
+    background: #000;
+    color: #fff;
+    line-height: 40px;
+    width: 115px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background: #00c8c8;
+    color: #000;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.wrap-2 {
+    padding: 20px 0 30px;
+}
+
+.wrap-2 .menu li {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    white-space: nowrap;
+}
+
+.wrap-2 .shoes {
+    position: relative;
+}
+
+.wrap-2 .offer50 {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 70px;
+    bottom: 40px;
+}
+
+.wrap-2 img {
+    margin-bottom: 20px;
+}
+
+.jack-women {
+    position: relative;
+}
+
+.jack-women figcaption {
+    position: absolute;
+    bottom: 0%;
+    top: 20%;
+    left: 10%;
+    right: 58%;
+}
+
+.wrap-2 figcaption p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.wrap-2 figcaption small {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 13px;
+}
+
+.jack-men {
+    position: relative;
+}
+
+.jack-men figcaption {
+    position: absolute;
+    bottom: 0%;
+    top: 20%;
+    left: 5%;
+    right: 60%;
+}
+
+.sun-glass {
+    position: relative;
+}
+
+.sun-glass figcaption {
+    position: absolute;
+    bottom: 16%;
+    left: 15%;
+}
+
+.off-brand {
+    position: relative;
+}
+
+.off-brand figcaption {
+    position: absolute;
+    bottom: 40%;
+    top: 20%;
+    left: 50%;
+    right: 10%;
+    text-align: center;
+}
+
+.off-brand figcaption p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.off-brand .btn {
+    background: #fff;
+    color: #000;
+    width: 200px;
+    height: 60px;
+}
+
+.off-brand .btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.wrap-3 {
+    padding: 15px 0 20px;
+}
+
+.wrap-3 h1+p {
+    padding: 0 0 40px;
+    line-height: 30px;
+}
+
+.shop-men {
+    position: relative;
+}
+
+.shop-men figcaption {
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+}
+
+.shop-women {
+    position: relative;
+}
+
+.shop-women figcaption {
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+}
+
+.shop-kids {
+    position: relative;
+}
+
+.shop-kids figcaption {
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+}
+
+.wrap-4 {
+    padding: 20px 0 50px;
+    text-align: center;
+}
+
+.wrap-4 .menu li {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0 15px;
+    white-space: nowrap;
+}
+
+.wrap-4 .menu li.active {
+    border-bottom: 2px solid #000;
+}
+
+.wrap-4 figcaption {
+    margin-top: 20px;
+}
+
+.wrap-4 button {
+    background: none;
+    color: #000;
+    border: 2px solid #d9c8aa;
+    width: 150px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.wrap-4 .signup-box {
+    background: url(img/wrap-4.5.webp) no-repeat center top/cover;
+    /* background-size: 100%; */
+}
+
+.signup-box h2 {
+    margin-top: 40px;
+}
+
+.signup-box p {
+    padding: 10px 0 0;
+}
+
+.signup-box button {
+    background: #000;
+    border: none;
+    color: #fff;
+}
+
+.wrap-5 h1 {
+    margin-bottom: 15px;
+}
+
+.secret-15 {
+    position: relative;
+}
+
+.secret-15 figcaption {
+    position: absolute;
+    bottom: -10%;
+    left: 5%;
+    right: 5%;
+    background: #fff;
+    padding: 15px 30px;
+}
+
+.information {
+    background: #f8f8f8;
+}
+
+.information ul {
+    padding: 100px 0 40px;
+    margin-left: 15px;
+}
+
+.information ul h2 {
+    padding-bottom: 2rem;
+    color: #575153;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.information ul li {
+    font-size: 14px;
+    line-height: 30px;
+    color: #717171;
+    font-weight: 600;
+}
+
+.information ul li input {
+    border: none;
+    color: #717171;
+    background: none;
+}
+
+.information ul li label {
+    color: #000;
+}
+
+
+.wrap-6 {
+    padding: 15px 0 20px;
+    text-align: center;
+}
+
+.wrap-6 small {
+    display: block;
+    font-size: 15px;
+}
+
+.wrap-6 p {
+    padding-bottom: 20px;
+}
+/* .singn-up-button{
+    position: relative;
+}
+.singn-up-form {
+    text-align: left;
+    background: #fff;
+    box-shadow: 0px 0px 5px 6px grey, -0px -0px 5px 6px grey;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    padding: 0 15px 10px;
+    position: absolute;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.singn-up-form p {
+    font-weight: 500;
+    font-size: 22px;
+    padding: 5px 0;
+}
+
+.singn-up-form input {
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+}
+.but{
+    display: flex;
+    justify-content: space-between;
+}
+.singn-up-form button{
+    width: 25%;
+    font-size: 20px;
+    border: none;
+    background: red;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 35px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.singn-up-form input:focus-visible{
+    outline-color: red;
+} */
+
+
+
+
+
+
+@media screen and (max-width:1220px) {
+    html {
+        font-size: 14px;
+    }
+
+    .banner {
+        padding: 65px 0 80px;
+    }
+
+    .banner h1 {
+        font-size: 72px;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .secret-15 figcaption {
+        left: 7%;
+    }
+
+    header {
+        overflow-x: hidden;
+    }
+
+}
+
+@media screen and (max-width:980px) {
+    .banner h1 {
+        font-size: 52px;
+    }
+
+    .menu {
+        overflow-x: auto;
+    }
+
+    .icon span {
+        padding: 0 5px;
+    }
+
+    .topbar .menu {
+        padding-left: 50px;
+    }
+
+    .col-tp-12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .col-tp-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    .col-tp-4 {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+    }
+
+    .off-brand h2 {
+        font-size: 17px;
+    }
+
+    .col-tp-3 {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+
+    .information ul {
+        padding: 50px 0 25px;
+    }
+
+    .wrap-2 .offer50 {
+        padding: 0 33px;
+    }
+
+    .jack-women figcaption {
+        top: 9%;
+        left: 5%;
+        right: 47%;
+    }
+
+    .jack-men figcaption {
+        top: 0;
+        right: 55%;
+    }
+
+    .secret-15 figcaption {
+        left: 0%;
+        right: 0%;
+        padding: 14px 0;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    html {
+        font-size: 12px;
+    }
+
+    .h4 {
+        font-size: 18px;
+    }
+
+    .col-ml-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    .topbar .menu,
+    .icon {
+        display: none;
+    }
+
+    .topbar .menu ul {
+        flex-flow: column;
+    }
+
+    .topbar .menu {
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        top: 100%;
+        left: 0;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .topbar .btn-mob {
+        display: block;
+    }
+
+    .banner h1 {
+        font-size: 40px;
+        line-height: 42px;
+    }
+
+    .wrap-2 .offer50 {
+        padding: 0 22px;
+        bottom: 23px;
+    }
+
+    .btn {
+        width: 95px;
+        line-height: 35px;
+        margin-top: 2px;
+    }
+
+    .wrap-2 figcaption p {
+        font-size: 14px;
+    }
+
+    .off-brand h2 {
+        font-size: 14px;
+    }
+
+    .off-brand .btn {
+        width: 190px;
+        height: 45px;
+    }
+
+    .information ul h2 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:460px) {
+
+    /* .banner .container-2 h1{font-size: 20px;line-height: 25px;} */
+    /* .banner li{margin-bottom: 5px;padding-bottom: 15px;} */
+    .col-mp-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    .col-mp-12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .banner .icons ul {
+        justify-content: center;
+    }
+
+    .banner .figcaption {
+        text-align: center;
+    }
+
+    .wrap-2 figcaption p {
+        font-size: 18px;
+    }
+
+    .wrap-2 .shoes,
+    .wrap-2 .bag {
+        text-align: center;
+    }
+
+    .wrap-2 .offer50 {
+        padding: 0 50px;
+    }
+
+    .off-brand figcaption {
+        position: static;
+    }
+
+    .off-brand h2 {
+        font-size: 19px;
+    }
+
+    .off-brand .btn {
+        background: #000;
+        color: #fff;
+    }
+
+    .wrap-3 img {
+        margin-bottom: 20px;
+    }
+
+    .secret-15 figcaption {
+        position: static;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
+
+    .wrap-4 .menu li,
+    .wrap-2 .menu li {
+        margin: 20px 10px;
+    }
+
+
+
+    /* .wrap-5 img{margin-bottom: -30px;} */
+
+    /* .shop-men figcaption {position: static;} */
+    /* .shop-women figcaption {position: static;} */
+    /* .shop-kids figcaption {position: static;} */
+
+
+
+
+
+}
